@@ -26,9 +26,12 @@ export default function AllFilms() {
     const pageContent = [];
     items.forEach(element => {
       pageContent.push(
-        <div key={element.filmID} className="filmSection">
+        <div key={element.filmID} id="allFilms">
           <h1 key={element.filmTitle}><span className="filmID">{element.filmID}</span>{" "+element.filmTitle}</h1>
           <h3 key={element.filmDescription}>{element.filmDescription}</h3>
+          <h3 key={element.filmReleaseYear}>Release Year: {element.filmReleaseYear}</h3>
+          <h3 key={element.filmLength}>Length: {element.filmLength} minutes</h3>
+          <h3 key={element.filmRating}>Rating: {element.filmRating}</h3>
           <hr></hr>
         </div>
       );
@@ -38,7 +41,10 @@ export default function AllFilms() {
 
   function AllMoviesButton() {
     return (
-      <button onClick={() => onButtonClick()}>Show All Movies</button>
+      <div id="one">
+        <h1>Show all movies</h1>
+        <button onClick={() => onButtonClick()} className="allFilmsButton" id="two">Show All Movies</button>
+      </div>
     )
   }
 
